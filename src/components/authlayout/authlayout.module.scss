@@ -1,3 +1,29 @@
+@import "@/styles/mediaQuery.scss";
+
+.slider {
+  width: 18px;
+  height: 100px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  background-color: #ffffff;
+  display: none;
+  border: 1px solid #000000;
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  z-index: 10;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include mq700px {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .main {
   width: 100vw;
   height: 100vh;
@@ -11,7 +37,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 300px;
+    min-width: 250px;
+    transition-duration: 200ms;
+
+    @include mq700px {
+      margin-left: -250px;
+    }
 
     .leftPane__container {
       height: 96%;
@@ -83,5 +114,10 @@
   .rightPane {
     height: 100%;
     width: 75%;
+    overflow: hidden;
+
+    @include mq700px {
+      width: 100%;
+    }
   }
 }

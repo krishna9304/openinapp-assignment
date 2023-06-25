@@ -1,3 +1,5 @@
+@import "@/styles/mediaQuery.scss";
+
 .topbar__container {
   width: 100%;
   display: flex;
@@ -24,13 +26,20 @@
       padding: 0.5rem 1rem;
       border-radius: 10px;
       outline: none;
+
+      @include mq834px {
+        display: none;
+      }
     }
 
     .prof_pic {
-      width: 30px;
-      height: 30px;
+      width: 2rem;
+      height: 2rem;
       border-radius: 50%;
       background-color: rgba(217, 35, 217, 0.667);
+      background-image: url("/prof_pic.svg");
+      background-size: cover;
+      cursor: pointer;
     }
   }
 }

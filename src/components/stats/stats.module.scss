@@ -3,21 +3,19 @@
   width: 100%;
 
   .stats__card__container {
-    display: flex;
-    justify-content: space-between;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
     padding: 0 2rem;
 
-    @include mq946px {
+    @include mq1140px {
       grid-template-columns: repeat(2, 1fr);
     }
 
     .stats__card {
       width: 100%;
-      min-width: 222px;
-      height: 120px;
+      min-width: 10rem;
+      height: 8rem;
       background-color: red;
       border-radius: 10px;
       display: flex;
