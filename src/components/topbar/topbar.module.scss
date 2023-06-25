@@ -1,0 +1,36 @@
+.topbar__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .topbar__header {
+    padding: 3rem 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .topbar__right {
+    display: flex;
+    align-items: center;
+    padding: 3rem 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
+
+    .search input {
+      border: none;
+      background-color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .prof_pic {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: rgba(217, 35, 217, 0.667);
+    }
+  }
+}

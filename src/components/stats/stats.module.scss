@@ -1,0 +1,46 @@
+@import "@/styles/mediaQuery.scss";
+.stats__container {
+  width: 100%;
+
+  .stats__card__container {
+    display: flex;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding: 0 2rem;
+
+    @include mq946px {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats__card {
+      width: 100%;
+      min-width: 222px;
+      height: 120px;
+      background-color: red;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+
+      p,
+      h2 {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 2rem;
+      }
+
+      p {
+        font-size: small;
+        margin-bottom: 0.5rem;
+      }
+
+      .img_container {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 2rem;
+        padding-top: 1rem;
+      }
+    }
+  }
+}
