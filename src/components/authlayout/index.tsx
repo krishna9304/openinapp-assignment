@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import { redirect } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 import dashboardIcon from "public/dashboard_icon.svg";
 import transactionIcon from "public/transaction_icon.svg";
@@ -30,6 +33,16 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label }) => {
 
 export const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const { data: session } = useSession({
+    required: true,
+  });
+
+  useEffect(() => {
+    if (!session) {
+      redirect("/");
+    }
+  }, [session]);
   return (
     <>
       <div
@@ -56,6 +69,12 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
             <div className={classes.nav__footer}>
               <div className={classes.nav__footer__item}>Help</div>
               <div className={classes.nav__footer__item}>Contact Us</div>
+              <div
+                onClick={() => signOut()}
+                className={classes.nav__footer__item}
+              >
+                Sign out
+              </div>
             </div>
           </div>
         </div>

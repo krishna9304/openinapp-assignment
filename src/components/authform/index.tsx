@@ -4,6 +4,7 @@ import classes from "./authform.module.scss";
 import googleIcon from "public/googleicon.svg";
 import appleIcon from "public/appleicon.svg";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 interface AuthFormProps {}
 
@@ -16,7 +17,7 @@ export const AuthForm: React.FC<AuthFormProps> = () => {
       <h1>Sign In</h1>
       <p>Sign in to your account</p>
       <div className={classes.authBtnGroup}>
-        <button>
+        <button onClick={() => signIn()}>
           <Image src={googleIcon} alt="google" /> Sign in with Google
         </button>
         <button>

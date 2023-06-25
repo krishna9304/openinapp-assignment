@@ -1,13 +1,24 @@
+@import "@/styles/mediaQuery.scss";
 .container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 25rem;
+  max-width: 25rem;
+  padding: 2rem;
+
+  @include mq768px {
+    width: 100%;
+  }
 
   .authBtnGroup {
     width: 100%;
     display: flex;
     gap: 1rem;
     margin: 1.5rem 0;
+
+    @include mq530px {
+      flex-direction: column;
+    }
 
     button {
       padding: 0.5rem 1rem;
@@ -18,9 +29,19 @@
       border: none;
       background-color: #ffffff;
       border-radius: 10px;
-      width: 50%;
       font-weight: 400;
+      width: 50%;
       color: #858585;
+      cursor: pointer;
+      transition-duration: 200ms;
+
+      &:hover {
+        scale: 1.05;
+      }
+
+      @include mq530px {
+        width: 100%;
+      }
     }
   }
 
@@ -74,6 +95,12 @@
       padding: 0.5rem;
       border-radius: 10px;
       font-size: large;
+      cursor: pointer;
+      transition-duration: 200ms;
+
+      &:hover {
+        scale: 1.05;
+      }
     }
   }
 

@@ -1,3 +1,4 @@
+"use client";
 import { AuthLayout } from "@/components/authlayout";
 import { NextPage } from "next";
 import classes from "./dashboard.module.scss";
